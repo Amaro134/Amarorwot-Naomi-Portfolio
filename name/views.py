@@ -9,7 +9,7 @@ def index(request):
             "description": "Corporate Wellness Platform featuring scalable backend services, JWT authentication, and secure API endpoints. Integrated Claude Vision OCR for AI-powered workout data extraction with SHA-256 deduplication.",
             "tags": ["NestJS", "React", "PostgreSQL", "Prisma", "TypeScript"],
             "color": "beyond",
-            "live_url": "#",
+            "live_url": "https://beyondsports.fitness/",
             "github_url": "https://github.com/Amaro134",
         },
         {
@@ -25,7 +25,7 @@ def index(request):
             "description": "Mental wellness platform for the East African market. Built after user interviews with 15+ Kampala users uncovering stigma as the key barrier. Features anonymous mood logging, analytics dashboard, and self-paced wellness content.",
             "tags": ["Python", "Django", "PostgreSQL", "Render", "CI/CD"],
             "color": "mindease",
-            "live_url": "#",
+            "live_url": "https://mindease-xwgc.onrender.com",
             "github_url": "https://github.com/Amaro134",
         },
         {
