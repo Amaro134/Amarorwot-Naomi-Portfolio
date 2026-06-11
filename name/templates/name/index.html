@@ -25,33 +25,32 @@
     <button class="nav__burger" aria-label="menu">&#9776;</button>
   </nav>
 
- 
   <!-- HERO -->
-<section class="hero" id="about">
-  <div class="hero__content">
-    <div class="hero__text">
-      <div class="hero__badge">AVAILABLE FOR HIRE</div>
-      <h1 class="hero__title">
-        Full Stack Developer |
-        <span class="hero__accent">Crafting Scalable</span>
-        Web &amp; Mobile Solutions
-      </h1>
-      <p class="hero__sub">
-        I build resilient, high-performance applications with React, NestJS, and
-        Node.js. Focusing on technical precision and user-centric architecture from
-        Kampala to the world.
-      </p>
-      <div class="hero__ctas">
-        <a href="#projects" class="btn btn--primary">View My Work &rarr;</a>
-        <a href="#contact" class="btn btn--ghost">Let's Talk</a>
+  <section class="hero" id="about">
+    <div class="hero__content">
+      <div class="hero__text">
+        <div class="hero__badge">AVAILABLE FOR HIRE</div>
+        <h1 class="hero__title">
+          Full Stack Developer |
+          <span class="hero__accent">Crafting Scalable</span>
+          Web &amp; Mobile Solutions
+        </h1>
+        <p class="hero__sub">
+          I build resilient, high-performance applications with React, NestJS, and
+          Node.js. Focusing on technical precision and user-centric architecture from
+          Kampala to the world.
+        </p>
+        <div class="hero__ctas">
+          <a href="#projects" class="btn btn--primary">View My Work &rarr;</a>
+          <a href="#contact" class="btn btn--ghost">Let's Talk</a>
+        </div>
+      </div>
+      <div class="hero__photo-wrap">
+        <img src="{% static 'image/profile image.jpeg' %}" alt="Naomi Amarorwot" class="hero__photo" />
       </div>
     </div>
-    <div class="hero__photo-wrap">
-      <img src="{% static 'image/profile image.jpeg' %}" alt="Naomi Amarorwot" class="hero__photo" />
-    </div>
-  </div>
-  <div class="hero__glow"></div>
-</section>
+    <div class="hero__glow"></div>
+  </section>
 
   <!-- VISION + STATS -->
   <section class="vision">
@@ -67,23 +66,12 @@
       </p>
     </div>
     <div class="vision__stats">
-      {% if stats %}
-        {% for stat in stats %}
-        <div class="stat-card">
-          <div class="stat-card__value">{{ stat.value }}</div>
-          <div class="stat-card__label">{{ stat.label }}</div>
-        </div>
-        {% endfor %}
-      {% else %}
-        <div class="stat-card">
-          <div class="stat-card__value">6+</div>
-          <div class="stat-card__label">Production APIs Delivered</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-card__value">3+</div>
-          <div class="stat-card__label">Frameworks Mastered</div>
-        </div>
-      {% endif %}
+      {% for stat in stats %}
+      <div class="stat-card">
+        <div class="stat-card__value">{{ stat.value }}</div>
+        <div class="stat-card__label">{{ stat.label }}</div>
+      </div>
+      {% endfor %}
     </div>
   </section>
 
@@ -100,16 +88,9 @@
           <span class="skill-group__icon">&#9633;</span> FRONTEND
         </div>
         <div class="skill-group__tags">
-          {% if skills.frontend %}
-            {% for s in skills.frontend %}
-            <span class="tag">{{ s.name }}</span>
-            {% endfor %}
-          {% else %}
-            <span class="tag">React.js</span>
-            <span class="tag">React Native</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">HTML/CSS3</span>
-          {% endif %}
+          {% for s in skills.frontend %}
+          <span class="tag">{{ s.name }}</span>
+          {% endfor %}
         </div>
       </div>
 
@@ -118,16 +99,9 @@
           <span class="skill-group__icon">&#9670;</span> BACKEND
         </div>
         <div class="skill-group__tags">
-          {% if skills.backend %}
-            {% for s in skills.backend %}
-            <span class="tag">{{ s.name }}</span>
-            {% endfor %}
-          {% else %}
-            <span class="tag">Node.js</span>
-            <span class="tag">NestJS</span>
-            <span class="tag">Python</span>
-            <span class="tag">Django</span>
-          {% endif %}
+          {% for s in skills.backend %}
+          <span class="tag">{{ s.name }}</span>
+          {% endfor %}
         </div>
       </div>
 
@@ -136,15 +110,9 @@
           <span class="skill-group__icon">&#9650;</span> DATA
         </div>
         <div class="skill-group__tags">
-          {% if skills.data %}
-            {% for s in skills.data %}
-            <span class="tag">{{ s.name }}</span>
-            {% endfor %}
-          {% else %}
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Prisma ORM</span>
-            <span class="tag">SQL</span>
-          {% endif %}
+          {% for s in skills.data %}
+          <span class="tag">{{ s.name }}</span>
+          {% endfor %}
         </div>
       </div>
 
@@ -153,16 +121,9 @@
           <span class="skill-group__icon">&#9775;</span> TOOLS
         </div>
         <div class="skill-group__tags">
-          {% if skills.tools %}
-            {% for s in skills.tools %}
-            <span class="tag">{{ s.name }}</span>
-            {% endfor %}
-          {% else %}
-            <span class="tag">Docker</span>
-            <span class="tag">Azure</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">Git</span>
-          {% endif %}
+          {% for s in skills.tools %}
+          <span class="tag">{{ s.name }}</span>
+          {% endfor %}
         </div>
       </div>
 
@@ -176,46 +137,26 @@
       <h2>Professional Experience</h2>
     </div>
 
-    {% if experiences %}
-      {% for exp in experiences %}
-      <div class="exp-card">
-        <div class="exp-card__dot {% if exp.is_current %}exp-card__dot--active{% endif %}"></div>
-        <div class="exp-card__body">
-          <div class="exp-card__top">
-            <div>
-              <h3 class="exp-card__title">{{ exp.title }}</h3>
-              <div class="exp-card__company">{{ exp.company }}, {{ exp.location }}</div>
-            </div>
-            <div class="exp-card__dates">{{ exp.start_date }} &ndash; {{ exp.end_date }}</div>
+    {% for exp in experiences %}
+    <div class="exp-card">
+      <div class="exp-card__dot {% if exp.is_current %}exp-card__dot--active{% endif %}"></div>
+      <div class="exp-card__body">
+        <div class="exp-card__top">
+          <div>
+            <h3 class="exp-card__title">{{ exp.title }}</h3>
+            <div class="exp-card__company">{{ exp.company }}, {{ exp.location }}</div>
           </div>
-          <ul class="exp-card__bullets">
-            {% for bullet in exp.bullets.all %}
-            <li>{{ bullet.text }}</li>
-            {% endfor %}
-          </ul>
+          <div class="exp-card__dates">{{ exp.start_date }} &ndash; {{ exp.end_date }}</div>
         </div>
+        <ul class="exp-card__bullets">
+          {% for bullet in exp.bullets %}
+          <li>{{ bullet }}</li>
+          {% endfor %}
+        </ul>
       </div>
-      {% endfor %}
-    {% else %}
-      <div class="exp-card">
-        <div class="exp-card__dot exp-card__dot--active"></div>
-        <div class="exp-card__body">
-          <div class="exp-card__top">
-            <div>
-              <h3 class="exp-card__title">Full Stack Developer Apprentice</h3>
-              <div class="exp-card__company">Refactory Academy, Kampala, Uganda</div>
-            </div>
-            <div class="exp-card__dates">Oct 2025 &ndash; Present</div>
-          </div>
-          <ul class="exp-card__bullets">
-            <li>Delivered 6+ production-ready RESTful APIs for the Beyond Sports platform using NestJS</li>
-            <li>Built and shipped multiple React.js dashboard pages and components</li>
-            <li>Integrated Claude Vision OCR and migrated to expo-notifications in React Native app</li>
-            <li>Participated in code reviews, sprint planning, and agile development processes</li>
-          </ul>
-        </div>
-      </div>
-    {% endif %}
+    </div>
+    {% endfor %}
+
   </section>
 
   <!-- PROJECTS -->
@@ -225,72 +166,32 @@
       <h2>Selected Projects</h2>
     </div>
     <div class="projects__grid">
-      {% if projects %}
-        {% for proj in projects %}
-        <div class="proj-card">
-          {% if proj.image_url %}
-          <div class="proj-card__img" style="background-image:url('{{ proj.image_url }}')"></div>
-          {% else %}
-          <div class="proj-card__img proj-card__img--placeholder">
-            <div class="proj-card__img-text">{{ proj.title }}</div>
-          </div>
-          {% endif %}
-          <div class="proj-card__body">
-            <div class="proj-card__top">
-              <h3>{{ proj.title }}</h3>
-              <div class="proj-card__actions">
-                {% if proj.live_url %}<a href="{{ proj.live_url }}" target="_blank" title="Live">&#8599;</a>{% endif %}
-                {% if proj.github_url %}<a href="{{ proj.github_url }}" target="_blank" title="GitHub">&lt;/&gt;</a>{% endif %}
-              </div>
-            </div>
-            <div class="proj-card__tags">
-              {% for tag in proj.tags.all %}
-              <span class="tag tag--sm">{{ tag.name }}</span>
-              {% endfor %}
-            </div>
-            <p>{{ proj.description }}</p>
-          </div>
+      {% for proj in projects %}
+      <div class="proj-card">
+        <div class="proj-card__img proj-card__img--{{ proj.color }}">
+          <div class="proj-card__img-text">{{ proj.title }}</div>
         </div>
-        {% endfor %}
-      {% else %}
-        <div class="proj-card">
-          <div class="proj-card__img proj-card__img--beyond"></div>
-          <div class="proj-card__body">
-            <div class="proj-card__top">
-              <h3>Beyond Sports</h3>
-              <div class="proj-card__actions">
-                <a href="#" title="Live">&#8599;</a>
-                <a href="#" title="GitHub">&lt;/&gt;</a>
-              </div>
+        <div class="proj-card__body">
+          <div class="proj-card__top">
+            <h3>{{ proj.title }}</h3>
+            <div class="proj-card__actions">
+              {% if proj.live_url %}
+              <a href="{{ proj.live_url }}" target="_blank" title="Live">&#8599;</a>
+              {% endif %}
+              {% if proj.github_url %}
+              <a href="{{ proj.github_url }}" target="_blank" title="GitHub">&lt;/&gt;</a>
+              {% endif %}
             </div>
-            <div class="proj-card__tags">
-              <span class="tag tag--sm">NestJS</span>
-              <span class="tag tag--sm">React</span>
-              <span class="tag tag--sm">PostgreSQL</span>
-              <span class="tag tag--sm">Prisma</span>
-            </div>
-            <p>Corporate Wellness Platform featuring scalable backend services, JWT authentication, and secure API endpoints. Integrated Claude Vision OCR for data processing.</p>
           </div>
-        </div>
-        <div class="proj-card">
-          <div class="proj-card__img proj-card__img--grocery"></div>
-          <div class="proj-card__body">
-            <div class="proj-card__top">
-              <h3>My Grocery Buddy</h3>
-              <div class="proj-card__actions">
-                <a href="#" title="Live">&#8599;</a>
-                <a href="#" title="GitHub">&lt;/&gt;</a>
-              </div>
-            </div>
-            <div class="proj-card__tags">
-              <span class="tag tag--sm">Python</span>
-              <span class="tag tag--sm">Django</span>
-              <span class="tag tag--sm">PostgreSQL</span>
-            </div>
-            <p>A complete responsive grocery management system with full CRUD operations and RESTful APIs, designed with a focus on intuitive user experience.</p>
+          <div class="proj-card__tags">
+            {% for tag in proj.tags %}
+            <span class="tag tag--sm">{{ tag }}</span>
+            {% endfor %}
           </div>
+          <p>{{ proj.description }}</p>
         </div>
-      {% endif %}
+      </div>
+      {% endfor %}
     </div>
   </section>
 
@@ -312,12 +213,12 @@
   <footer class="footer">
     <div class="footer__left">
       <span class="footer__brand">Naomi Amarorwot</span>
-      <span class="footer__copy">&copy; 2024 Naomi Amarorwot. Built with precision.</span>
+      <span class="footer__copy">&copy; 2026 Naomi Amarorwot. Built with precision.</span>
     </div>
     <div class="footer__links">
-        <a href="https://github.com/Amaro134" target="_blank">GitHub</a>
-       <a href="https://www.linkedin.com/in/amarorwot-naomi-b8ab92370/" target="_blank">LinkedIn</a>
-        <a href="https://x.com/amaro_naomilove" target="_blank">Twitter</a>
+      <a href="https://github.com/Amaro134" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/amarorwot-naomi-b8ab92370/" target="_blank">LinkedIn</a>
+      <a href="https://x.com/amaro_naomilove" target="_blank">Twitter</a>
       <a href="mailto:amaronaomi134@gmail.com">Email</a>
     </div>
   </footer>
