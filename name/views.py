@@ -36,6 +36,15 @@ def index(request):
             "live_url": "#",
             "github_url": "https://github.com/Amaro134",
         },
+
+        {
+    "title": "Kampala EEG Lab & Sleep Center",
+    "description": "Full production web application for a medical diagnostic clinic, including a multi-step patient booking system, JWT-authenticated admin dashboard with role-based access control, OTP password reset, and automated email notifications. Deployed on a live custom domain with CI/CD auto-deployment.",
+    "tags": ["React", "NestJS", "Prisma", "PostgreSQL", "TypeScript", "DigitalOcean"],
+    "color": "kampala",
+    "live_url": "https://kampalaeeglabandsleepcenter.ug",
+    "github_url": "https://github.com/Amaro134",
+},
     ]
 
     skills = {
@@ -80,6 +89,22 @@ def index(request):
                 "Participated in code reviews, sprint planning, and agile development processes.",
             ],
         },
+
+        {
+    "title": "Freelance Full Stack Developer",
+    "company": "Kampala EEG Lab & Sleep Center",
+    "location": "Kampala, Uganda",
+    "start_date": "2026",
+    "end_date": "2026",
+    "is_current": False,
+    "bullets": [
+        "Designed and built a full production web application from scratch for a medical diagnostic clinic.",
+        "Implemented a multi-step patient booking flow with JWT authentication and OTP password reset.",
+        "Built an admin dashboard with role-based access control for managing appointments and staff accounts.",
+        "Integrated transactional emails via Brevo for booking confirmations, OTP delivery, and admin onboarding.",
+        "Deployed the full stack (React/Vite frontend + NestJS/Prisma backend) on a DigitalOcean droplet with a custom domain, SSL, and CI/CD auto-deployment via GitHub Actions.",
+    ],
+},
     ]
 
     context = {

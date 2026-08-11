@@ -1,58 +1,57 @@
-// Nav burger toggle
-const nav = document.querySelector(".nav");
+// ---- NAV burger ----
 const burger = document.querySelector(".nav__burger");
+const nav = document.querySelector(".nav");
+if (burger) {
+  burger.addEventListener("click", () => nav.classList.toggle("open"));
+}
 
-burger?.addEventListener("click", () => {
-  nav.classList.toggle("open");
-});
-
-// Close nav on link click (mobile)
+// ---- Smooth close mobile menu on link click ----
 document.querySelectorAll(".nav__links a").forEach((link) => {
   link.addEventListener("click", () => nav.classList.remove("open"));
 });
 
-// Active nav link on scroll
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav__links a");
+// ---- Count-up animation for stat cards ----
+function parseValue(str) {
+  // Strips non-numeric chars, returns { number, suffix }
+  const match = str.match(/([\d.]+)(.*)/);
+  if (!match) return { number: 0, suffix: str };
+  return { number: parseFloat(match[1]), suffix: match[2].trim() };
+}
 
-const observer = new IntersectionObserver(
+function animateCount(el, duration = 1800) {
+  const original = el.textContent.trim();
+  const { number, suffix } = parseValue(original);
+  const isInt = Number.isInteger(number);
+  const start = performance.now();
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    // Ease out cubic
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = eased * number;
+    el.textContent =
+      (isInt ? Math.floor(current) : current.toFixed(1)) + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+    else el.textContent = original; // snap to exact final value
+  }
+
+  requestAnimationFrame(update);
+}
+
+// Trigger count-up when stats scroll into view
+const statValues = document.querySelectorAll(".stat-card__value");
+
+const countObs = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === "#" + entry.target.id) {
-            link.classList.add("active");
-          }
-        });
+        animateCount(entry.target);
+        countObs.unobserve(entry.target); // only animate once
       }
     });
   },
-  { rootMargin: "-40% 0px -55% 0px" },
+  { threshold: 0.5 },
 );
 
-sections.forEach((s) => observer.observe(s));
-
-// Scroll-reveal for cards
-const revealEls = document.querySelectorAll(
-  ".proj-card, .exp-card, .stat-card, .skill-group",
-);
-const revealObs = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-        revealObs.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.1 },
-);
-
-revealEls.forEach((el) => {
-  el.style.opacity = "0";
-  el.style.transform = "translateY(24px)";
-  el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-  revealObs.observe(el);
-});
+statValues.forEach((el) => countObs.observe(el));
