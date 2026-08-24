@@ -36,17 +36,39 @@ def index(request):
             "live_url": "#",
             "github_url": "https://github.com/Amaro134",
         },
-
         {
-    "title": "Kampala EEG Lab & Sleep Center",
-    "description": "Full production web application for a medical diagnostic clinic, including a multi-step patient booking system, JWT-authenticated admin dashboard with role-based access control, OTP password reset, and automated email notifications. Deployed on a live custom domain with CI/CD auto-deployment.",
-    "tags": ["React", "NestJS", "Prisma", "PostgreSQL", "TypeScript", "DigitalOcean"],
-    "color": "kampala",
-    "live_url": "https://kampalaeeglabandsleepcenter.ug",
-    "github_url": "https://github.com/Amaro134",
-},
+            "title": "Kampala EEG Lab & Sleep Center",
+            "description": "Full production web application for a medical diagnostic clinic, including a multi-step patient booking system, JWT-authenticated admin dashboard with role-based access control, OTP password reset, and automated email notifications. Deployed on a live custom domain with CI/CD auto-deployment.",
+            "tags": ["React", "NestJS", "Prisma", "PostgreSQL", "TypeScript", "DigitalOcean"],
+            "color": "kampala",
+            "live_url": "https://kampalaeeglabandsleepcenter.ug",
+            "github_url": "https://github.com/Amaro134",
+        },
     ]
 
+    designs = [
+        {
+            "title": "Grocery Buddy",
+            "description": "Full UX/UI design for a grocery management app with intuitive CRUD flows, search, and a statistics dashboard. Designed for clarity across mobile and desktop breakpoints.",
+            "tags": ["Figma", "UX Design", "Mobile", "Dashboard"],
+            "image_url": "https://drive.google.com/file/d/1Bgt5IfejGX-2aJNGnM1lbOkGMtVL4JtL/view?usp=sharing",
+            "figma_url": "https://www.figma.com/design/khc9MZCcBoxiQMqG0lzByQ/Grocery-buddy?node-id=0-1&m=dev&t=0XSUXzY3uunRC4I6-1",
+        },
+        {
+            "title": "MindEase App Design",
+            "description": "End-to-end UX/UI design for a mental wellness platform targeting East African users. Focused on reducing stigma through calm, approachable visuals and simple onboarding flows.",
+            "tags": ["Figma", "UX Research", "Mobile Design"],
+            "image_url": "",
+            "figma_url": "https://www.figma.com/design/uMa7xshPu0F87dU3tF811v/MindEase?node-id=0-1&m=dev&t=cKqfMxOPEwNGksAp-1",
+        },
+        {
+            "title": "Kampala EEG Lab Patient Portal",
+            "description": "Designed the patient-facing booking interface and admin dashboard for a medical diagnostic center. Prioritised clarity and trust through clean layouts and accessible colour choices.",
+            "tags": ["Figma", "Healthcare UX", "Dashboard Design"],
+            "image_url": "",
+            "figma_url": "https://www.figma.com/design/2nLJ02qChlztxmXAfFu0uj/Kampala-EEG-Labs?node-id=0-1&m=dev&t=RTw89YOcatiyFBQ0-1",
+        },
+    ]
     skills = {
         "frontend": [
             {"name": "React.js"}, {"name": "React Native"},
@@ -58,11 +80,13 @@ def index(request):
         ],
         "data": [
             {"name": "PostgreSQL"}, {"name": "Prisma ORM"},
-            {"name": "Supabase"}, {"name": "SQL"},
+            {"name": "Supabase"}, {"name": "SQL"}, {"name": "Neon"},
         ],
         "tools": [
-            {"name": "Docker"}, {"name": "Azure"},{"name": "Ditigal Ocean"},{"name": "Render"},{"name": "Vercel"},
-            {"name": "CI/CD"}, {"name": "Git"},{"name": "Firebase"},{"name": "Google cloud console"},{"name": "Figma"},{"name": "Lean and Agile "},
+            {"name": "Docker"}, {"name": "Azure"}, {"name": "Digital Ocean"},
+            {"name": "Render"}, {"name": "Vercel"}, {"name": "CI/CD"},
+            {"name": "Git"}, {"name": "Firebase"}, {"name": "Google Cloud Console"},
+            {"name": "Figma"}, {"name": "Lean and Agile"},
         ],
     }
 
@@ -89,26 +113,26 @@ def index(request):
                 "Participated in code reviews, sprint planning, and agile development processes.",
             ],
         },
-
         {
-    "title": "Freelance Full Stack Developer",
-    "company": "Kampala EEG Lab & Sleep Center",
-    "location": "Kampala, Uganda",
-    "start_date": "2026",
-    "end_date": "2026",
-    "is_current": False,
-    "bullets": [
-        "Designed and built a full production web application from scratch for a medical diagnostic clinic.",
-        "Implemented a multi-step patient booking flow with JWT authentication and OTP password reset.",
-        "Built an admin dashboard with role-based access control for managing appointments and staff accounts.",
-        "Integrated transactional emails via Brevo for booking confirmations, OTP delivery, and admin onboarding.",
-        "Deployed the full stack (React/Vite frontend + NestJS/Prisma backend) on a DigitalOcean droplet with a custom domain, SSL, and CI/CD auto-deployment via GitHub Actions.",
-    ],
-},
+            "title": "Freelance Full Stack Developer",
+            "company": "Kampala EEG Lab & Sleep Center",
+            "location": "Kampala, Uganda",
+            "start_date": "2026",
+            "end_date": "2026",
+            "is_current": False,
+            "bullets": [
+                "Designed and built a full production web application from scratch for a medical diagnostic clinic.",
+                "Implemented a multi-step patient booking flow with JWT authentication and OTP password reset.",
+                "Built an admin dashboard with role-based access control for managing appointments and staff accounts.",
+                "Integrated transactional emails via Brevo for booking confirmations, OTP delivery, and admin onboarding.",
+                "Deployed the full stack on a DigitalOcean droplet with a custom domain, SSL, and CI/CD via GitHub Actions.",
+            ],
+        },
     ]
 
     context = {
         "projects": projects,
+        "designs": designs,
         "skills": skills,
         "stats": stats,
         "experiences": experiences,
