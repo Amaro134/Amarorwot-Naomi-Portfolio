@@ -47,28 +47,28 @@ def index(request):
     ]
 
     designs = [
-        {
-            "title": "Grocery Buddy",
-            "description": "Full UX/UI design for a grocery management app with intuitive CRUD flows, search, and a statistics dashboard. Designed for clarity across mobile and desktop breakpoints.",
-            "tags": ["Figma", "UX Design", "Mobile", "Dashboard"],
-            "image_url": "https://drive.google.com/file/d/1Bgt5IfejGX-2aJNGnM1lbOkGMtVL4JtL/view?usp=sharing",
-            "figma_url": "https://www.figma.com/design/khc9MZCcBoxiQMqG0lzByQ/Grocery-buddy?node-id=0-1&m=dev&t=0XSUXzY3uunRC4I6-1",
-        },
-        {
-            "title": "MindEase App Design",
-            "description": "End-to-end UX/UI design for a mental wellness platform targeting East African users. Focused on reducing stigma through calm, approachable visuals and simple onboarding flows.",
-            "tags": ["Figma", "UX Research", "Mobile Design"],
-            "image_url": "",
-            "figma_url": "https://www.figma.com/design/uMa7xshPu0F87dU3tF811v/MindEase?node-id=0-1&m=dev&t=cKqfMxOPEwNGksAp-1",
-        },
-        {
-            "title": "Kampala EEG Lab Patient Portal",
-            "description": "Designed the patient-facing booking interface and admin dashboard for a medical diagnostic center. Prioritised clarity and trust through clean layouts and accessible colour choices.",
-            "tags": ["Figma", "Healthcare UX", "Dashboard Design"],
-            "image_url": "",
-            "figma_url": "https://www.figma.com/design/2nLJ02qChlztxmXAfFu0uj/Kampala-EEG-Labs?node-id=0-1&m=dev&t=RTw89YOcatiyFBQ0-1",
-        },
-    ]
+    {
+        "title": "Grocery Buddy",
+        "description": "Full UX/UI design for a grocery management app with intuitive CRUD flows, search, and a statistics dashboard. Designed for clarity across mobile and desktop breakpoints.",
+        "tags": ["Figma", "UX Design", "Mobile", "Dashboard"],
+        "image_key": "Screenshot 2026-08-24 144735.png",
+        "figma_url": "https://www.figma.com/design/khc9MZCcBoxiQMqG0lzByQ/Grocery-buddy?node-id=0-1&m=dev&t=0XSUXzY3uunRC4I6-1",
+    },
+    {
+        "title": "Kampala EEG Lab Patient Portal",
+        "description": "Designed the patient-facing booking interface and admin dashboard for a medical diagnostic center. Prioritised clarity and trust through clean layouts and accessible colour choices.",
+        "tags": ["Figma", "Healthcare UX", "Dashboard Design"],
+        "image_key": "Screenshot 2026-08-24 144924.png",
+        "figma_url": "https://www.figma.com/design/2nLJ02qChlztxmXAfFu0uj/Kampala-EEG-Labs?m=auto&t=IDPGQyqgSvANo4hh-6",
+    },
+    {
+        "title": "MindEase App Design",
+        "description": "End-to-end UX/UI design for a mental wellness platform targeting East African users. Focused on reducing stigma through calm, approachable visuals and simple onboarding flows.",
+        "tags": ["Figma", "UX Research", "Mobile Design"],
+        "image_key": "Screenshot 2026-08-24 145855.png",
+        "figma_url": "https://www.figma.com/design/uMa7xshPu0F87dU3tF811v/MindEase?m=auto&t=IDPGQyqgSvANo4hh-6",
+    },
+]
     skills = {
         "frontend": [
             {"name": "React.js"}, {"name": "React Native"},
@@ -103,7 +103,7 @@ def index(request):
             "company": "Refactory Academy — Beyond Sports",
             "location": "Kampala, Uganda",
             "start_date": "Oct 2025",
-            "end_date": "Present",
+            "end_date": "June 2026",
             "is_current": True,
             "bullets": [
                 "Delivered 6+ production-ready RESTful APIs for the Beyond Sports platform using NestJS.",
