@@ -1,3 +1,16 @@
+function switchTab(tabName) {
+  document
+    .querySelectorAll(".proj-tab")
+    .forEach((t) => t.classList.remove("active"));
+  document
+    .querySelectorAll(".proj-panel")
+    .forEach((p) => p.classList.add("hidden"));
+  const tab = document.querySelector(`.proj-tab[data-tab="${tabName}"]`);
+  if (tab) tab.classList.add("active");
+  const panel = document.getElementById("tab-" + tabName);
+  if (panel) panel.classList.remove("hidden");
+}
+
 // ---- NAV burger ----
 const burger = document.querySelector(".nav__burger");
 const nav = document.querySelector(".nav");
@@ -38,6 +51,21 @@ function animateCount(el, duration = 1800) {
 
   requestAnimationFrame(update);
 }
+
+// Project tab toggle
+const tabs = document.querySelectorAll(".proj-tab");
+const panels = document.querySelectorAll(".proj-panel");
+
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    tabs.forEach((t) => t.classList.remove("active"));
+    panels.forEach((p) => p.classList.add("hidden"));
+    tab.classList.add("active");
+    document
+      .getElementById("tab-" + tab.dataset.tab)
+      .classList.remove("hidden");
+  });
+});
 
 // Trigger count-up when stats scroll into view
 const statValues = document.querySelectorAll(".stat-card__value");
