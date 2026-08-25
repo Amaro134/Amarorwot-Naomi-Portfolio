@@ -244,3 +244,31 @@ ul { list-style: none; }
   .cta__contacts { flex-direction: column; align-items: center; }
   .footer { flex-direction: column; text-align: center; }
 }
+/* ---- PROJECT TABS ---- */
+.proj-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+.proj-tab {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all var(--trans);
+}
+.proj-tab:hover { color: var(--white); }
+.proj-tab.active {
+  color: var(--teal);
+  border-bottom-color: var(--teal);
+}
+.proj-panel { display: block; }
+.proj-panel.hidden { display: none; }
